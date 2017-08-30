@@ -1,0 +1,22 @@
+* {
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+#anima {
+    position: absolute;
+    width: 25%;
+    height: 30px;
+    background-color: red;
+    bottom: 0;
+}
+
+#anima p {
+    padding-top: 10px;
+    text-align: center;
+    color: white;
+    font-family: Helvetica;
+
+}

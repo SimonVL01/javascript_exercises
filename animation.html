@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/animation.css"/>
+
+</head>
+<body>
+
+    <div id="anima">
+    <p>"We have lift off!</p>
+    </div>
+
+    <script src="scripts/animation.js"></script>
+
+    <script>
+
+        function Person(fn, ln) {
+            this.firstname = fn;
+            this.lastname = ln;
+        }
+
+        var n = Number(5);
+
+        alert(typeof(n));
+
+        var p = new Person("John", "Doe");
+
+        alert(p.firstname);
+
+        var address = {};
+
+        address.street = "Kattenberg";
+        address.city = "Heverlee";
+
+        address.print = function() {
+            document.write(this.street + " " + this.city);
+        }
+
+        address.print();
+
+        var s = String("Hello");
+        s.print = function() {
+            document.write(this);
+        }
+
+        var a = [];
+        a.push("Jimi");
+        a.push("Janis");
+        a.push("Jay");
+
+        /*for(var i in a) {
+            document.write(a[i] + "<br/>");
+        }*/
+
+        document.write(" " + a.join(" . "));
+
+    </script>
+
+</body>
+</html>

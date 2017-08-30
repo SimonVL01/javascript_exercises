@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+<style>
+    * {margin: auto;}
+    body {width: 60%;
+        margin-top: 10%;}
+
+    p {
+        margin-top: 3%;
+        font-family: Helvetica;
+    }
+
+</style>
+
+
+</head>
+<body>
+
+    <form id="formulier">
+
+        <fieldset>
+
+        <legend>
+            Formulier
+        </legend>
+
+        <div>
+        <Label for="age">Geef uw geboortedag op</Label>
+        <input id="age" type="date" placeholder="Leeftijd Berekenen" />
+            <input id="submitting" type="submit" value="leeftijd opgeven"/>
+        </div>
+        </fieldset>
+    </form>
+
+<script>
+    var el = document.getElementById("formulier");
+
+    function dateCalculator(e) {
+        e.preventDefault();
+    var elAge = document.getElementById("age");
+    var elDate = new Date(elAge.value);
+    var dateToday = new Date();
+
+    var ageNow = dateToday.getFullYear() - elDate.getFullYear();
+
+    var monthDif = dateToday.getMonth() - elDate.getMonth();
+    if (monthDif < 0) {
+        monthDif = Math.abs(monthDif);
+        ageNow = ageNow - 1;
+    }
+    var dayDif = dateToday.getDay() - elDate.getDay();
+
+    var monthDays = monthDif * 30;
+    var totalDays = monthDays + dayDif;
+
+    document.body.innerHTML += "<p>Your age is " + ageNow + "</p>";
+    document.body.innerHTML += "<p>Your next birthday is in " + monthDif + " months and " + dayDif + " days." + "</p>";
+    document.body.innerHTML += "<p>or " + totalDays + " days</p>";
+    }
+
+    el.addEventListener("submit", dateCalculator);
+
+</script>
+
+</body>
+</html>

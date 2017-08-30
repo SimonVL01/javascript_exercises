@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        textarea {
+            height: 300px;
+            width: 600px;
+        }
+
+        image {
+            height: 500px;
+            width: 100%;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<form id="formulier">
+
+    <fieldset>
+
+        <legend>
+            Formulier
+        </legend>
+
+        <div>
+            <Label for="title">Movie title</Label>
+            <input id="title" type="date" placeholder="Insert your favorite movie" />
+        </div>
+
+        <div>
+            <Label for="runLength">Run length</Label>
+            <input id="runLength" type="date" placeholder="Insert your favorite movie" />
+        </div>
+
+        <div>
+            <Label for="description">Description</Label>
+            <textarea id="description" cols="10" rows="4" placeholder="Tell us about it."></textarea>
+        </div>
+
+        <div>
+            <Label for="image">image</Label>
+            <input id="image" type="url" placeholder="movie image" />
+        </div>
+
+        <div>
+            <Label for="rating">rating</Label>
+            <select id="rating" placeholder="movie image">
+
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+
+            </select>
+        </div>
+
+        <input id="submitting" type="submit" value="leeftijd opgeven"/>
+    </fieldset>
+</form>
+
+<script>
+
+    var el = document.getElementbyId("formulier");
+    var image = document.getElementById("image");
+
+    function imageLoader(e) {
+       var url = image.value;
+       document.body.innerHTML += "<img href='" + url + "'/>"
+    }
+
+    image.addEventListener("blur", imageLoader);
+
+</script>
+
+
+
+</body>
+</html>

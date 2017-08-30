@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        #myDiv {
+            height: 500px;
+            width: 60%;
+            background-color: blue;
+        }
+
+    </style>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+</head>
+<body>
+        <div class="container" method="POST">
+    <form id="myForm">
+        <div>
+        <label class="control-label" for="fn">Voornaam</label>
+        <input class="form-control" name="firstname" placeholder="Geef uw naam"/>
+        </div>
+
+        <div>
+        <label class="control-label" for="an">Achternaam</label>
+        <input class="form-control" id="ln" name="lastname" placeholder="Geef uw achternaam"/>
+        </div>
+
+        <div>
+        <label class="control-label" for="pw">Wachtwoord</label>
+        <input class="form-control" type="password" id="pw" name="password"/>
+        </div>
+
+        <div>
+        <input type="submit" value="registreer"/>
+        </div>
+
+    </form>
+
+    <button id="myButton">Click here</button>
+
+    <div id="myDiv">blabla</div>
+
+        </div>
+
+<script>
+
+    function showMessage() {
+        alert("Peekaboo!");
+    }
+
+    var el = document.getElementById("myButton");
+    el.addEventListener("click", showMessage);
+
+    var d = document.getElementById("myDiv");
+
+    var counter = 0;
+
+    d.addEventListener("mousemove", function(event) {
+        d.style.background = "red";
+        console.log(event);
+        console.log("Mouse moved " + event.clientX + ", " + event.clientY);
+    });
+
+    var form = document.getElementById("myForm");
+    form.addEventListener("submit", function(e) {
+        alert(form.firstname.value);
+        alert(form.lastname.value);
+        alert(form.password.value);
+
+        if (!isFormValid(form)) {
+            alert("This is wrong.");
+        }
+    });
+
+    var m = document.getElementById("ln");
+    m.addEventListener("keypress", function(e) {
+        console.log("PRESSED KEY INSIDE LAST NAME");
+        console.log(e);
+    });
+
+</script>
+
+</body>
+</html>
