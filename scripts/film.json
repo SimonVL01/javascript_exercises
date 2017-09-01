@@ -1,0 +1,57 @@
+{
+
+  "title": "Tulip Fever",
+
+  "rating": 4,
+
+  "runlength": 107,
+
+  "description": "An artist falls for a young married woman while he's commissioned to paint her portrait during the Tulip mania of 17th century Amsterdam.",
+
+  "units": [3, 7, 8],
+
+  "characters": [
+
+    {"name": "Jack Sparrow", "actor": {"firstname": "Johny", "lastname": "Depp"}},
+
+    {"name": "Tristan Ludlow", "actor": {"firstname": "Brad", "lastname": "Pitt"}},
+
+    {"name": "Elisabeth", "actor": {"firstname": "Keira", "lastname": "Nightly"}},
+
+    {"name": "Pirate #1", "actor": {"firstname": "Bob", "lastname": "Jenkins"}},
+
+    {"name": "Pirate #2", "actor": {"firstname": "Janis", "lastname": "Leeroy"}}
+
+  ],
+
+  "comments": [
+
+    {"user": "Happy Hippo", "text": "Good movie"},
+
+    {"user": "James Dean", "text": "All in for the pastafarians"},
+
+    {"user": "Lanis Jacobs", "text": "Nothing to say really"},
+
+    {"user": "Bobby Redding", "text": "This is awesome"},
+
+    {"user": "Jeniffer Brown", "text": "Whow dude!"},
+
+    {"user": "Trace Hilltop", "text": "Not too bad"},
+
+
+
+    {"user": {
+
+      "alias": "Happy Hippo",
+
+      "firstname": "John",
+
+      "lastname": "Doe",
+
+      "text": "Good movie"
+
+    }}
+
+  ]
+
+}

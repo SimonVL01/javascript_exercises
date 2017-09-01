@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <div class="container">
+        <h1>Mijn pagina</h1>
+        <button id="mijnknop" class="btn btn-primary">Data inladen van server</button>
+    </div>
+    <div id="output"></div>
+
+<script>
+
+    var b = document.getElementById("mijnknop");
+    b.addEventListener("click", function(e) {
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "scripts/film.json");
+        xhr.addEventListener("readystatechange", function() {
+           if (xhr.readyState === 4 ) {
+               if (xhr.status === 200) {
+                   var o = JSON.parse(xhr.responseText);
+
+                   alert(o.title);
+                   var output = document.getElementById("output");
+
+                   var s ="<table>";
+
+                       s += "<tr><td>" + o.title + "</td></tr>";
+                       s += "<tr><td>" + o.runLength + "</td></tr>";
+                       s += "<tr><td>" + o.rating + "</td></tr>";
+                       s += "<tr><td>" + o.description + "</td></tr>";
+
+                       for (var c of o.characters) {
+                           s += "<tr><td>" + c.name + "</tr></td>";
+                           s += "<tr><td>" + c.actor.firstname + "</tr></td>";
+                           s += "<tr><td>" + c.actor.lastname + "</tr></td>";
+                       }
+
+                       for (var c of o.comments) {
+                           s += "<tr><td>" + c.user.alias + "</tr></td>";
+                           s += "<tr><td>" + c.user.firstname + "</tr></td>";
+                           s += "<tr><td>" + c.user.lastname + "</tr></td>";
+                           s += "<tr><td>" + c.user.text + "</tr></td>";
+                       }
+
+                   }
+
+                       output.innerHTML += s;
+
+                   s += "</table>";
+
+               } else {
+                   alert("FAILED");
+               }
+        });
+
+        xhr.send();
+
+        b.style.backgroundColor = "red";
+        b.style.border = "10px solid red";
+        b.textContent = "Klikkerdeklikkerdeklik";
+    });
+
+</script>
+
+</body>
+</html>
